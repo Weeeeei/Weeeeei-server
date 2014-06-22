@@ -1,0 +1,10 @@
+- launch_url = URI.escape("#{app_name}://launch?id=#{target_user}")
+- appstore_url = URI.escape("https://itunes.apple.com/jp/app/id#{app_id}")
+
+:javascript
+  window.location = "#{launch_url}";
+  setTimeout(function() {
+    if (!document.webkitHidden) {
+      window.location = "#{appstore_url}";
+    }
+  }, 25);
